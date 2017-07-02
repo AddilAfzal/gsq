@@ -6,7 +6,7 @@
             Live Statistics
         </h1>
         <p class="lead">
-            last Updated: 02/07/2017 11:30am
+            last Updated: {{\Carbon\Carbon::now()}}
         </p>
 
         <table class="table table-sm">
@@ -23,28 +23,33 @@
             @foreach($servers as $server)
                 <tr>
                     <td>
-                        <span class="badge badge-success"> Online</span>
+                        @if($server['gq_online'] == true)
+                            <span class="badge badge-success"> Online</span>
+                        @else
+                            <span class="badge badge-danger"> Offline</span>
+
+                        @endif
                     </td>
                     <td width="10px">
-                        <img src="/img/game_icons/sm/{{$server['type']}}.gif" alt="{{$server['type']}}">
+                        <img src="/img/game_icons/sm/{{$server['gq_type']}}.gif" alt="{{$server['gq_type']}}">
                     </td>
                     <td>
-                         {{$server['ip']}}:{{$server['port']}}
+                        {{$server['gq_address']}}:{{$server['gq_port_client']}}
                     </td>
                     <td>
-                        {{$server['name']}}
+                        {{$server['gq_hostname']}}
                     </td>
                     <td>
-                        cs_assault_blizzard_final
+                        {{isset($server['gq_mapname']) ? $server['gq_mapname'] : "-"}}
                     </td>
                     <td>
-                        27 / 31
+                        {{isset($server['gq_numplayers']) ? $server['gq_numplayers'] : "-"}} / {{isset($server['gq_maxplayers']) ? $server['gq_maxplayers'] : "-"}}
                     </td>
                     <td>
-                        <a class="btn btn-primary btn-sm" href="steam://connect/148.251.78.214:27017/"><i
+                        <a class="btn btn-primary btn-sm" href="{{$server['gq_joinlink']}}"><i
                                     class="fa fa-external-link" aria-hidden="true" data-toggle="tooltip"
                                     data-placement="top" title="Connect"></i></a>
-                        <a class="btn btn-secondary btn-sm" href="/servers/assault"><i class="fa fa-bars"
+                        <a class="btn btn-secondary btn-sm" href=""><i class="fa fa-bars"
                                                                                        aria-hidden="true"
                                                                                        data-toggle="tooltip"
                                                                                        data-placement="top"
