@@ -7,7 +7,7 @@ GSQ (Game Server Query) is a web application that queries and displays live data
 - Based on Laravel.
 - Uses [GameQ](https://github.com/Austinb/GameQ) to perform queries.
 
-##Todo
+## Todo
 - Enable caching for better performance.
 - Develop server profile functionality.
 
