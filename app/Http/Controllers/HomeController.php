@@ -2,20 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Servers;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
 	public function index()
 	{
-		$path = storage_path() . "/servers.json";
-
-		$GameQ = new \GameQ\GameQ();
-		$GameQ->addServersFromFiles($path);
-
-		$servers = $GameQ->process();
-
 		return view('home.index')
-			->with('servers', $servers);
+			->with('servers', Servers::all());
+	}
+
+	public function table()
+	{
+		return view('home.table')
+			->with('servers', Servers::all());
 	}
 }

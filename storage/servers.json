@@ -27,7 +27,12 @@
   {
     "name": "Public . hsCorp . de [WARMUP|BET|RTV]",
     "type": "cs16",
-    "host": "148.251.78.214:27029"
+    "host": "148.251.78.214:27025"
+  },
+  {
+    "name": "Public . hsCorp . de [WARMUP|BET|RTV]",
+    "type": "csgo",
+    "host": "216.52.148.47:27015"
   },
   {
     "name": "TS3 . hsCorp . de",
