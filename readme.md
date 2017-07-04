@@ -13,12 +13,7 @@ GSQ (Game Server Query) is a web application that queries and displays live data
 - Update stats in background.
 
 ## Demo
-[dev2.addil.ml](dev2.addil.ml)
-
-
-```
-Give the example
-```
+[dev2.addil.ml](http://dev2.addil.ml)
 
 ## License
 The GSQ web application is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
